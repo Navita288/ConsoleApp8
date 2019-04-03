@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace LearningProperties
 {
-    class Program
+    class Player
     {
-        static void Main(string[] args)
+        public bool isAlive = true;
+        int health = 100;
+
+        public void Hit()
         {
-            Download();
+            Random r = new Random();
+            health -= r.Next(5, 50);
         }
 
-        static void Download()
+        public void CheckDeath()
         {
-            Task.Run(() =>
-            {
-                Thread.Sleep(3000);
-                Console.WriteLine("Complete");
-            });
+            if (health <= 0)
+                isAlive = false;
         }
     }
-}
