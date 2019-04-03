@@ -23,3 +23,17 @@ namespace LearningProperties
                 isAlive = false;
         }
     }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Player player = new Player();
+            for (int i = 0; i < 20; i++)
+            {
+                player.Hit();
+                player.CheckDeath();
+                Console.WriteLine("Is player alive: " + player.isAlive);
+            }
+        }
+    }
+}
